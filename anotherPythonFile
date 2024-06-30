@@ -1,0 +1,17 @@
+
+def is_prime(num):
+    if num <= 1:
+        return False
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+class TestPrime(unittest.TestCase):
+    def test_prime(self):
+        self.assertTrue(is_prime(11))
+        self.assertFalse(is_prime(4))
+        self.assertTrue(is_prime(13))
+        self.assertFalse(is_prime(1))
+
+unittest.main(argv=[''], verbosity=2, exit=False)
